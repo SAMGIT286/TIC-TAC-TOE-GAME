@@ -1,0 +1,51 @@
+
+.container{
+    background-color:#A9E5BB;
+    height : 70vh;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+.game{   
+    height: 60vmin;
+    width: 80vmin;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:10px; 
+}
+
+.box{
+    height:20vmin;
+    width:20vmin;
+    border: 2px solid black;
+    border-radius: 10px;  
+    font-size: 4rem;
+    color: #92252A;
+    background-color:#FCF6B1;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#reset-btn { 
+   background-color: #92252A;
+   color: white;
+   padding: 1rem;
+   border: none;
+   border-radius: 5px;
+}
+
+.msg-container{
+    font-size: 5vmin;
+    color: white;
+    text-align: center;
+    margin: 1rem;
+  
+}
