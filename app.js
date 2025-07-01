@@ -3,6 +3,7 @@ let boxes = document.querySelectorAll('.box'); //selects the box and the resetBT
 let resetBtn = document.querySelector("#reset-btn");
 let msg = document.querySelector('.msg-container');
 
+
 let playerO = true; //playero has default value as true, which means playero will start first 
 
 const winPatterns = [ //an array of the winning patterns 
@@ -35,6 +36,8 @@ boxes.forEach((box) => {
 
 
 const checkWinner = () => {
+    let winnerFound = false;
+
     for (pattern of winPatterns) {
         let pos1 = boxes[pattern[0]].innerText; //store the inner text value in posn1, 2 and 3 resp.
         let pos2 = boxes[pattern[1]].innerText;
@@ -45,12 +48,25 @@ const checkWinner = () => {
             if (pos1 === pos2 && pos1 === pos3) { //compare all the three positions 
                 console.log('Congratulations!!, the winner is', pos1);
                 msg.innerText = `Congratulations!! The winner is player ${pos1}`;
+                winnerFound = true;
                 disableBtn(); //call the disable function 
             }
         }
-
     }
+
+let allFilled = true;
+
+boxes.forEach((box) => {
+    if(box.innerText === ""){
+    allFilled = false;
+    };
+})
+
+if(!winnerFound && allFilled){ //all boxes filled but no winner is found 
+    msg.innerText = `😐 Draw condition! Please play again!`
+    disableBtn();
 }
+};
 
 const disableBtn = () => { //disable the buttons after one game 
     for (let box of boxes) {
